@@ -32,6 +32,5 @@ export class User {
     get posts() {
         return this._posts;
     }
-
 }
 
