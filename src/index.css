@@ -1,0 +1,6 @@
+.error {
+    padding: 4px;
+    background: #ff3434;
+    color: white;
+    max-width: max-content;
+}
