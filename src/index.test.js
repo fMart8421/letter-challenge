@@ -66,7 +66,7 @@ describe("Letter", () => {
 
     //
 
-    test('expects returned JSON string to be the same as the expected object on Letter.get', () => {
+    test('expects returned object in JSON string to be the same as the expected object on Letter.get', () => {
         const expectedUsers = [user]
 
         const returnedUsers = JSON.parse(Letter.get("https://jsonplaceholder.typicode.com/users"));
