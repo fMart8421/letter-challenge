@@ -45,10 +45,10 @@ describe("Letter", () => {
         fetch.mockResolvedValueOnce({
             ok: true,
             json: async () => [userObj]
-        }).mockResolvedValueOnce(JSON.stringify({
+        }).mockResolvedValueOnce({
             ok: true,
             json: async () => [postObj]
-        }));
+        });
         Letter.get("https://jsonplaceholder.typicode.com/users");
 
         expect(global.fetch.mock.calls.length).toBe(2);
@@ -60,10 +60,10 @@ describe("Letter", () => {
         fetch.mockResolvedValueOnce({
             ok: true,
             json: async () => [userObj]
-        }).mockResolvedValueOnce(JSON.stringify({
+        }).mockResolvedValueOnce({
             ok: true,
             json: async () => [postObj]
-        }));
+        });
         const returnedUsers = Letter.get("https://jsonplaceholder.typicode.com/users");
 
         expect(typeof returnedUsers).toBe("string");
@@ -75,10 +75,10 @@ describe("Letter", () => {
         fetch.mockResolvedValueOnce({
             ok: true,
             json: async () => [userObj]
-        }).mockResolvedValueOnce(JSON.stringify({
+        }).mockResolvedValueOnce({
             ok: true,
             json: async () => [postObj]
-        }));
+        });
 
         const expectedUsers = [user];
 
