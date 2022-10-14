@@ -1,3 +1,8 @@
+
+/**
+ * @param {Error} err - Error object with a message containing the status
+ * @returns {string} String with the message to be displayed
+ */
 export const handleError = (err) => {
     if (err.message.includes("400")) {
         return "There was a problem with the request! Please check if you have the correct sintax."
