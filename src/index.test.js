@@ -33,16 +33,8 @@ user.posts = [post];
 
 describe("Letter", () => {
 
-    // //
-
-    beforeEach(() => {
-        fetch = jest.fn();
-    })
-
-    // //
-
     test('expects 2 calls to the fetch function on Letter.get', () => {
-        fetch.mockResolvedValueOnce({
+        global.fetch = jest.fn(()=>{}).mockResolvedValueOnce({
             ok: true,
             json: async () => [userObj]
         }).mockResolvedValueOnce({
@@ -57,7 +49,8 @@ describe("Letter", () => {
     //
 
     test('expects a JSON string on Letter.get', () => {
-        fetch.mockResolvedValueOnce({
+        
+        global.fetch = jest.fn(()=>{}).mockResolvedValueOnce({
             ok: true,
             json: async () => [userObj]
         }).mockResolvedValueOnce({
@@ -72,7 +65,7 @@ describe("Letter", () => {
     //
 
     test('expects returned object in JSON string to be the same as the expected object on Letter.get', () => {
-        fetch.mockResolvedValueOnce({
+        global.fetch = jest.fn(()=>{}).mockResolvedValueOnce({
             ok: true,
             json: async () => [userObj]
         }).mockResolvedValueOnce({
@@ -90,7 +83,7 @@ describe("Letter", () => {
     //
 
     test('expects an error message on the document on Letter.get with an incorrect link', () => {
-        fetch.mockResolvedValueOnce({
+        global.fetch = jest.fn(()=>{}).mockResolvedValueOnce({
             ok: false,
             status: 404,
             statusText:"Could not find the page"
@@ -103,7 +96,7 @@ describe("Letter", () => {
     // 
 
     test('expects Letter.error to have an error message when Letter.get is called with an incorrect link', () => {
-        fetch.mockResolvedValueOnce({
+        global.fetch = jest.fn(()=>{}).mockResolvedValueOnce({
             ok: false,
             status: 404,
             statusText:"Could not find the page"
@@ -116,7 +109,7 @@ describe("Letter", () => {
     // 
 
     test('expects Letter.error to have a 404 error message when Letter.get is called with an incorrect link', () => {
-        fetch.mockResolvedValueOnce({
+        global.fetch = jest.fn(()=>{}).mockResolvedValueOnce({
             ok: false,
             status: 404,
             statusText:"Could not find the page"
