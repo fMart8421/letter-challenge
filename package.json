@@ -31,8 +31,8 @@
     "verbose": true,
     "transform": {},
     "testEnvironment": "jsdom",
-    "setupFiles": [
-      "./config/jest/setupTests.js"
+    "setupFilesAfterEnv": [
+      "./config/jest/setupTestsAfterEnv.js"
     ]
   }
 }
