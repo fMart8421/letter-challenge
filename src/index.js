@@ -45,6 +45,7 @@ export const Letter = {
         } catch (err) {
             // if the server returned a non 200 status, an error will be thrown
             this.error = handleError(err);
+            return;
         }
 
         return JSON.stringify(fetchedUsers);
